@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/plane_shooter_boss_mermaid.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Mermaid_boss.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 120, 240 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Mermaid_boss" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, -121 )
+frames = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, -121 )
+polygon = PoolVector2Array( 2, -62, 17, -39, 20, -8, 12, 21, 0, 42, -9, 64, -11, 81, 1, 100, 16, 99, 30, 85, 27, 98, 10, 106, -10, 105, -27, 83, -37, 33, -21, -5, -38, -30, -21, -17, -14, -32, -7, -50 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 2, -129.5 )
+scale = Vector2( 1.1, 1.1 )
+collision_layer = 2
+collision_mask = 7
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 2, -62, 17, -39, 20, -8, 12, 21, 0, 42, -9, 64, -11, 81, 1, 100, 16, 99, 30, 85, 27, 98, 10, 106, -10, 105, -27, 83, -37, 33, -23.6364, -0.909088, -38, -30, -20.9091, -11.3636, -14, -32, -7, -50 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

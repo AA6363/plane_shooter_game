@@ -11,16 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.x = position.x - horizontal_speed
-#	if towards > 1: #checks of towards is bigger than 1
-#		position.y += towards #adds to the y position
-#		towards -= 1 #subtracks from towards
-#		print(towards)
-#	if towards < 10:
-#		position.y -= towards
-#		towards += 1
-	time += delta
-	position.y += sin(time) * 2
-	
+	wave_movement(delta)
 
 func _on_Area2D_body_entered(body):
 	if body is Bullet:
@@ -32,8 +23,7 @@ func _on_Area2D_body_entered(body):
 			body.queue_free()
 
 
-func wave_movement():
-	pass
-#	for n in towards:
-#		towards -=1
-#		position.y += towards
+func wave_movement(delta):
+	time += delta
+	position.y += sin(time) * 2
+
