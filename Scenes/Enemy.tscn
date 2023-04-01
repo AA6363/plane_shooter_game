@@ -22,6 +22,7 @@ radius = 26.0768
 radius = 29.1548
 
 [node name="Enemy" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
 script = ExtResource( 2 )
 

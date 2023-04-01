@@ -1,7 +1,8 @@
 extends KinematicBody2D
+class_name fishEnemy
 
 var horizontal_speed = 1
-var vertical_direction = 1
+var vertical_directin = 1
 var hp = 5
 var towards = 10
 var time = 60
@@ -25,5 +26,5 @@ func _on_Area2D_body_entered(body):
 
 func wave_movement(delta):
 	time += delta
-	position.y += sin(time) * 2
+	position.y += sin(time) * 1.5
 
