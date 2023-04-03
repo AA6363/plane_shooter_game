@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 onready var pos2D = $Position2D
 

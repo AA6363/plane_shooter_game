@@ -22,6 +22,8 @@ func _on_Area2D_body_entered(body):
 		else:
 			hp -=1
 			body.queue_free()
+	if body is Player:
+		body.queue_free()
 
 
 func wave_movement(delta):

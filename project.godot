@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Scenes/Bullet.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scenes/Player.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "fishEnemy",
 "language": "GDScript",
 "path": "res://Scenes/Enemy.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"Player": "",
 "fishEnemy": ""
 }
 

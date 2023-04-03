@@ -39,4 +39,9 @@ collision_mask = 7
 [node name="Hitbox" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 2, -62, 17, -39, 20, -8, 12, 21, 0, 42, -9, 64, -11, 81, 1, 100, 16, 99, 30, 85, 27, 98, 10, 106, -10, 105, -27, 83, -37, 33, -23.6364, -0.909088, -38, -30, -20.9091, -11.3636, -14, -32, -7, -50 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
